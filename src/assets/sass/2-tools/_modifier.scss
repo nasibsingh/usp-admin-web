@@ -1,0 +1,223 @@
+// ----------------------------------------------
+// MODIFIER
+// ----------------------------------------------
+
+// Index
+
+//  1. sass for include flex in any element with modifier
+//  2. border with modifier
+//  3. image with modifier
+//  4. margin with modifier
+//  5. color with modifier
+//  6. text-align with modifier
+
+//  1. flex with align modifier
+.item-flex {
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+  
+    &--direction-column {
+      @include flex-direction(column);
+    }
+    &--item-normal {
+      @include align-items(normal);
+    }
+    &--alignment-flexstart {
+      @include justify-content(flex-start !important);
+      @include mobile {
+        display: initial;
+        flex: none !important;
+      }
+    }
+    &--alignment-center {
+      @include justify-content(center);
+    }
+    &--alignment-flexend {
+      @include justify-content(flex-end);
+    }
+    &--alignment-space-between {
+      @include justify-content(space-between);
+    }
+    &--flexgrow-1 {
+      @include flex-grow(1);
+    }
+  
+    .outline-block {
+      border: 1px solid palette(mono, black);
+      background: palette(mono, white);
+    }
+  
+    .form-group {
+      margin: 0 20px 0 0;
+  
+      // @include mobile {
+      //   margin: 0 0 0 0;
+      // }
+  
+      // @include tablet {
+      //   margin: 0 0 0 0;
+      // }
+    }
+  
+    .c-button {
+      margin: 0;
+  
+      @include mobile {
+        margin: 15px 1px 0 0;
+      }
+  
+      @include tablet {
+        margin: 15px 1px 0 0;
+      }
+    }
+  
+    .filter-bar {
+      width: 400px;
+    }
+  }
+  
+  //  2. border with left and right modifier
+  .has-border {
+    &--left {
+      &::before {
+        content: "";
+        width: 1px;
+        height: 12px;
+        background-color: palette(mono, black);
+        @include floating-element(absolute, 33%, null, null, 0);
+      }
+    }
+    &--right {
+      &::after {
+        content: "";
+        width: 1px;
+        height: 12px;
+        background-color: palette(mono, black);
+        @include floating-element(absolute, 33%, 0);
+      }
+    }
+  }
+  
+  //  3. image
+  .img {
+    &--filter-grayscale {
+      @include filter(grayscale, 100%);
+    }
+    &--imgfull {
+      width: 100%;
+    }
+    &--imgauto {
+      width: auto;
+    }
+  }
+  
+  //  4. margin with modifier
+  .margin {
+    &--top-bottom-10 {
+      margin: 10px 0;
+    }
+    &--top-bottom-20 {
+      margin: 20px 0;
+    }
+  }
+  
+  //  5. color with modifier
+  .color {
+    &--text-white {
+      a,
+      p,
+      span,
+      label,
+      input[type="text"],
+      input[type="url"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"] {
+        color: palette(mono, white);
+      }
+    }
+    &--background-white {
+      a,
+      p,
+      span,
+      label,
+      input[type="text"],
+      input[type="url"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"] {
+        background-color: palette(mono, white);
+      }
+    }
+    &--text-black {
+      a,
+      p,
+      span,
+      label,
+      input[type="text"],
+      input[type="url"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"] {
+        color: palette(mono, black);
+      }
+    }
+    &--background-black {
+      a,
+      p,
+      span,
+      label,
+      input[type="text"],
+      input[type="url"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"] {
+        background-color: palette(mono, black);
+      }
+    }
+  }
+  
+  //  6. text-align with modifier
+  .text-align {
+    &--left {
+      text-align: left;
+    }
+    &--right {
+      text-align: right;
+    }
+    &--center {
+      text-align: center;
+    }
+  }
+  
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    // @include mobile {
+    //   flex-direction: column;
+    //   align-items: flex-start;
+    // }
+  }
+  
+  .cursor {
+    &--pointer {
+      cursor: pointer;
+    }
+  
+    &--not-allowed {
+      cursor: not-allowed !important;
+    }
+  
+    &--default {
+      cursor: default !important;
+    }
+  }
+  
+  .has-boder {
+    border: 1px solid #ececec;
+    border-radius: 4px;
+  }

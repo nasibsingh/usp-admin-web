@@ -1,0 +1,39 @@
+{
+    "button": "button",
+    "error":{
+        "login":{
+            "invalidCredentials":"Hmmm, we could not find a record matching these details. Could you please update and try again?",
+            "accountBlocked": "Looks like you have tried 3 times with incorrect details. To ensure safety of your account, we have locked this for 1 hour. Please come back again after an hour and try again!"
+        }
+    },
+    "patient": {
+        "pId": "Id",
+        "patient": "Name",
+        "email": "Email",
+        "code": "Code",
+        "dob": "Dob"
+    },
+    "login":{
+        "heading":"Login to your account",
+        "form":{
+            "label":{
+                "email":"Email",
+                "password":"Password"
+
+            },"placeholder":{
+                "email":"Enter email",
+                "password":"Enter password"
+            }
+            ,"button":{
+                "sub":"Submit"
+            }
+        },
+        "error":{
+            "email":"Please enter a valid email",
+            "password":"Please enter a password",
+            "login":{
+                "invalidCredentials":"Invalid Credentials"
+            } 
+        }
+    }
+}

@@ -1,0 +1,17 @@
+
+$primary: palette(primary,base);
+$secondary: palette(secondary,base);
+$success: palette(alert,success);
+$info:palette(alert,information);
+$warning: palette(alert,warning);
+$danger: palette(alert,danger);
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+);
+@import "~bootstrap/scss/bootstrap";

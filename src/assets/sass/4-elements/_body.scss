@@ -1,0 +1,12 @@
+body {
+    font-family: $default-font;
+    font-size: $default-size;
+    line-height: $default-linehieght;
+    color: palette(mono, dark);
+    background-color: palette(mono,white);
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0.1px; 
+    overflow-y: visible;
+  }

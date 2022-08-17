@@ -1,0 +1,188 @@
+.c-checkbox {
+  @include flexbox;
+  @include flex-direction(column);
+  padding-left: 0px;
+
+  input[type="checkbox"]+label {
+    display: inline-flex;
+    cursor: pointer;
+    @include align-items(center);
+    color: palette(grey, 10);
+
+  }
+
+  input[type="checkbox"]:disabled+label {
+    cursor: not-allowed;
+    background-color: transparent;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]+label:before {
+    content: "\2714";
+    border: 1px solid palette(grey, 80);
+    border-radius: $border-radius;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: var(--fixed-space-sm);
+    color: transparent;
+    transition: 0.2s;
+    background-color: palette(mono, white);
+    font-size: 20px;
+  }
+
+  input[type="checkbox"]+label:active:before {
+    transform: scale(0);
+  }
+
+  input[type="checkbox"]:checked+label:before {
+    background-color: palette(mono, black);
+    border-color: palette(mono, black);
+    color: palette(mono, white);
+  }
+
+  input[type="checkbox"]:disabled+label:before {
+    transform: scale(1);
+  }
+
+  input[type="checkbox"]:checked:disabled+label:before {
+    transform: scale(1);
+    background-color: palette(mono, black);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.radio__input:checked+.radio__radio::after {
+  transform: scale(1);
+}
+
+.radio-container {
+  font-size: 16px;
+  padding: 8px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.radio-container {
+  label {
+    position: relative;
+    cursor: pointer;
+    font-weight: $font-regular;
+    padding-right: 32px;
+  }
+
+  label:nth-last-child(1) {
+    padding-right: 0;
+  }
+
+  label::before {
+    content: "";
+    border: 2px solid $default-color;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: -8px 20px;
+    margin-left: 0;
+    border-radius: 50%;
+  }
+
+  label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(34, 34, 34, 0);
+    left: 5px;
+    top: 9px;
+    margin: -8px 20px;
+    margin-left: 0;
+    border-radius: 50%;
+    transition: all 0.4s;
+  }
+
+  input[type="radio"]:checked+label::after {
+    background: $default-color;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.c-toggle {
+  width: 59px;
+  background-color: palette(grey,80);
+  cursor: pointer;
+  user-select: none;
+  border-radius: 23px;
+  padding: var(--fixed-space-xxxxs);
+  height: 27px;
+  position: relative;
+  transition: all 0.3s ease-in 0s;
+
+  &__button {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: $font-regular;
+    cursor: pointer;
+    background-color: palette(mono, white);
+    color: palette(mono, white);
+    padding: 8px 12px;
+    border-radius: 18px;
+    min-width: 46px;
+    @include flexbox;
+    justify-content: center;
+    align-items: center;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    min-width: unset;
+    box-sizing: border-box;
+    position: absolute;
+    left: 32px;
+    transition: all 0.3s ease-in 0s;
+  }
+
+  &--disabled {
+    background-color: palette(mono, white);
+    transition: all 0.3s ease-in 0s;
+    left: var(--fixed-space-xxxxs);;
+
+  }
+
+  &.toggle-success {
+    background-color: palette(alert, success);
+    transition: all 0.3s ease-in 0s;
+  }
+
+}
+

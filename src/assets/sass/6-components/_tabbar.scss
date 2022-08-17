@@ -1,0 +1,16 @@
+.c-tabbar {
+    &__button {
+        padding: var(--fixed-space-xxs) var(--fixed-space-sm);
+        background-color: palette(mono, white);
+        display: inline-block;
+        border: 1px solid palette(grey, light);
+        color:palette(mono, black);
+        border-radius: 6px;
+        cursor: pointer;
+        &--active{
+            background-color: palette(mono, black);
+            color:palette(mono, white);
+            border:none;
+        }
+    }
+}

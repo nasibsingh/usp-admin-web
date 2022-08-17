@@ -1,0 +1,19 @@
+.c-pagination{
+    @include flexbox;
+   @include justify-content(center);
+   @include align-items(center);
+   list-style-type: none;
+    &__pagination-item{
+        margin: 0px var(--fixed-space-sm);
+        cursor: pointer;
+    }
+    &--disabled{
+        cursor: not-allowed;
+    }
+    &--active{
+        background-color: palette(mono, black);
+        padding: 7px 12px;
+        color:white;
+        border-radius:$border-radius;
+    }
+}

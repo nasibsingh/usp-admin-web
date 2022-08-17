@@ -1,0 +1,62 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu),
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3) {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+input:required {
+  box-shadow: none;
+}
+
+
+.form-label {
+  color: palette(mono, black);
+  width: 100%;
+}
+
+.c-text-field {
+  margin-bottom: 16px;
+
+  .text-input {
+    border: 1px solid #BBBBBF;
+    padding: 16px 24px;
+    // margin-bottom: 16px;
+
+    &:focus {
+      box-shadow: none;
+      border: 1px solid palette(secondary, base);
+      color: palette(mono, black);
+    }
+
+    &__search-icon {
+      position: absolute;
+      right: 12px;
+      top: 15px;
+      z-index: 9999;
+    }
+
+    &__error {
+      @include flexbox;
+      color: palette(alert, danger);
+      margin-top: 6px;
+      width: 100%;
+
+    }
+
+    &.icon {
+      padding: 16px 40px 16px 24px;
+    }
+
+    &.danger-border {
+      border: 1px solid palette(alert, danger);
+    }
+  }
+}

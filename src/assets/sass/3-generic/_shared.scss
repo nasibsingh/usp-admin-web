@@ -1,0 +1,61 @@
+// ----------------------------------------------
+// SHARED
+// ----------------------------------------------
+
+/**
+ * Shared declarations for certain elements.
+ */
+
+/**
+ * Always declare margins in the same direction:
+ * csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+
+address,
+blockquote, p, pre,
+dl, ol, ul,
+figure,
+hr,
+table,
+fieldset {
+  margin-bottom: 1.3rem;
+}
+
+b, strong {
+  font-weight: $font-bold;;
+}
+
+
+/**
+ * Consistent indentation for lists.
+ */
+
+dd, ol, ul {
+  margin-left: 1rem;
+}
+
+/**
+ * Adjust focus color to match brand
+ */
+
+a,
+input,
+select,
+textarea,
+button,
+[role='button'],
+object {
+  &:focus {
+    outline-color: transparent;
+    outline-offset: 0rem;
+    text-decoration: none;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  .js-focus-visible &:focus:not(.focus-visible) {
+    outline: none;
+  }
+}

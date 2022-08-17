@@ -1,0 +1,577 @@
+// ----------------------------------------------
+// Mixin
+// ----------------------------------------------
+
+
+// ----------------------------------------------
+// Most Usable Mixin
+// ----------------------------------------------
+// @include flexbox;
+// @include flex-direction(column);
+// @include justify-content(center);
+// @include align-items(flex-start);
+// @include align-content(center);
+// @include border-radius(10px);
+// @include transform(rotate(90deg));
+// @include gradient($dark-cyan, $green-blue);
+// @include transition(transform 0.2s linear);
+// @include floating-element(absolute, 50%, null, null, 50%);
+// @include background-property(no-repeat, contain, center);
+// @include box-shadow( 0px, 1px, 30px, 1px, rgba(0, 0, 0, 0.4));
+// ----------------------------------------------
+
+
+// Index
+
+
+// 2.  flex
+// 3.  transform
+// 4.  transition
+// 5.  animation
+// 6.  border-radius
+// 7.  placeholder
+// 8.  Column count
+// 9.  box-shadow
+// 10. background
+// 11. heading-typography
+// 12. position
+// 13. filter
+// 14. nth-child
+// 15. background-color
+// 16. equal width column for table
+// 17. flex-width
+// 18. user select
+// 19. appearance
+// 20. gradient-background
+// 21. css @include
+// 22. Centering Elements with position
+// 23. Background-color and text-color
+// 24. spaceUnit
+
+
+// --------------------------------------------------
+// 2. Flex SASS mixins
+// --------------------------------------------------
+// Flexbox display
+@mixin flexbox {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+	-webkit-flex-direction: $direction;
+	-moz-flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+	-webkit-flex-wrap: $wrap;
+	-moz-flex-wrap: $wrap;
+	-ms-flex-wrap: $wrap;
+	flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+	-webkit-flex-flow: $flow;
+	-moz-flex-flow: $flow;
+	-ms-flex-flow: $flow;
+	flex-flow: $flow;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+	-webkit-flex-grow: $grow;
+	-moz-flex-grow: $grow;
+	-ms-flex-grow: $grow;
+	flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+@mixin flex-shrink($shrink) {
+	-webkit-flex-shrink: $shrink;
+	-moz-flex-shrink: $shrink;
+	-ms-flex-shrink: $shrink;
+	flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+@mixin flex-basis($width) {
+	-webkit-flex-basis: $width;
+	-moz-flex-basis: $width;
+	-ms-flex-basis: $width;
+	flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+	-webkit-justify-content: $justify;
+	-moz-justify-content: $justify;
+	-ms-justify-content: $justify;
+	justify-content: $justify;
+	-ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align) {
+	-webkit-align-content: $align;
+	-moz-align-content: $align;
+	-ms-align-content: $align;
+	align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align) {
+	-webkit-align-items: $align;
+	-moz-align-items: $align;
+	-ms-align-items: $align;
+	align-items: $align;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+	-webkit-box-ordinal-group: $val;
+	-moz-box-ordinal-group: $val;
+	-ms-flex-order: $val;
+	-webkit-order: $val;
+	order: $val;
+}
+
+// Packing Flex Values
+// - applies to: flex value
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+     -moz-box-flex: $values;
+      -webkit-flex: $values;
+  	  -ms-flex: $values;
+  	      flex: $values;
+}
+// --------------------------------------------------
+// 3. transform SASS mixins
+// --------------------------------------------------
+
+/* transform-mixin */
+
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+//transform origin
+@mixin transform-origin ($origin) {
+	-moz-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+// rotate
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+// translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// --------------------------------------------------
+// 4. transition SASS mixins
+// --------------------------------------------------
+
+/* transition mixin */
+
+@mixin transition($transition...) {
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	-webkit-transition: $transition;
+	transition: $transition;
+}
+
+@mixin transition-property($property...) {
+	-moz-transition-property: $property;
+	-o-transition-property: $property;
+	-webkit-transition-property: $property;
+	transition-property: $property;
+}
+
+@mixin transition-duration($duration...) {
+	-moz-transition-property: $duration;
+	-o-transition-property: $duration;
+	-webkit-transition-property: $duration;
+	transition-property: $duration;
+}
+
+@mixin transition-timing-function($timing...) {
+	-moz-transition-timing-function: $timing;
+	-o-transition-timing-function: $timing;
+	-webkit-transition-timing-function: $timing;
+	transition-timing-function: $timing;
+}
+
+@mixin transition-delay($delay...) {
+	-moz-transition-delay: $delay;
+	-o-transition-delay: $delay;
+	-webkit-transition-delay: $delay;
+	transition-delay: $delay;
+}
+
+// --------------------------------------------------
+// 5. animation SASS mixins
+// --------------------------------------------------
+
+/*animation keyrames */
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// 6. border-radius
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// 7. placeholder @mixin
+@mixin placeholder-color($color) {
+	&.placeholder {
+		color: $color
+	}
+	&:-moz-placeholder {
+		color: $color
+	}
+	&::-webkit-input-placeholder {
+		color: $color
+	}
+	&:-ms-input-placeholder {
+		color: $color
+	}
+}
+
+// 8. Column count mixin
+@mixin column-count($count) {
+	-webkit-column-count: $count;
+	/* Chrome, Safari, Opera */
+	-moz-column-count: $count;
+	/* Firefox */
+	column-count: $count;
+}
+
+@mixin column-count($count-gap) {
+	-webkit-column-count: $count-gap;
+	/* Chrome, Safari, Opera */
+	-moz-column-count: $count-gapt;
+	/* Firefox */
+	column-count: $count-gap;
+}
+
+// 9. box-shadow-mixin
+@mixin box-shadow( $horiz: .5em, $vert: .5em, $blur: 0px, $spread: 0px, $color: rgba(0, 0, 0, 0.07)) {
+	-webkit-box-shadow: $horiz $vert $blur $spread $color;
+	-moz-box-shadow: $horiz $vert $blur $spread $color;
+	box-shadow: $horiz $vert $blur $spread $color;
+}
+
+// 10. background-mixin
+@mixin background-property($background-repeat, $background-size, $background-position) {
+	background-repeat: $background-repeat;
+	background-size: $background-size;
+	background-position: $background-position;
+}
+
+// 11. heading-typography-mixin
+@mixin config-headings($heading...) {
+	@each $i in $heading {
+		#{nth($i, 1)} {
+			font-family: nth($i, 2);
+			font-size: nth($i, 3);
+			margin-bottom: nth($i, 4);
+		}
+	}
+}
+
+// 12. position-mixin
+@mixin floating-element($position: null, $top: null, $right: null, $bottom: null, $left: null) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+// 13. filter-mixin
+@mixin filter($filter-type, $filter-amount) {
+	-webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+	-moz-filter: $filter-type+unquote('(#{$filter-amount})');
+	-ms-filter: $filter-type+unquote('(#{$filter-amount})');
+	-o-filter: $filter-type+unquote('(#{$filter-amount})');
+	filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+// 14. nth-child
+@mixin first($num) {
+	@if $num==1 {
+		&:first-child {
+			@content;
+		}
+	}
+	@else {
+		&:nth-child(-n + #{$num}) {
+			@content;
+		}
+	}
+}
+@mixin last($num) {
+	&:nth-last-child(-n + #{$num}) {
+		@content;
+	}
+}
+@mixin from-end($num) {
+	&:nth-last-child(#{$num}) {
+		@content;
+	}
+}
+@mixin all-but($num) {
+	&:not(:nth-child(#{$num})) {
+		@content;
+	}
+}
+@mixin each($num) {
+	&:nth-child(#{$num}n) {
+		@content;
+	}
+}
+@mixin from-first-last($num) {
+	&:nth-child(#{$num}),
+	&:nth-last-child(#{$num}) {
+		@content;
+	}
+}
+@mixin n-between($num, $first, $last) {
+  &:nth-child(#{$num}n):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+    @content;
+  }
+}
+
+// 16. equal width column for table
+// @each $key,
+// $val in $width-size {
+// 	.has-width--equal-#{$key} {
+// 		th {
+// 			width: #{$val};
+// 		}
+// 	}
+// }
+
+// 17. flex-width
+// @for $i from 0 through 100 {
+// 	.flex-width-#{$i} {
+// 		flex: 0% + $i
+// 	}
+// }
+
+// 18. user select
+@mixin user-select {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+// 19. appearance
+@mixin appearance ($value) {
+	-webkit-appearance: $value;
+	-moz-appearance: $value;
+	appearance: $value;
+}
+
+// 20. gradient-background
+@mixin gradient($from, $to, $stop: 100%) {
+    /* IE10+ */
+	background: -ms-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Standard */
+	background: linear-gradient(to bottom, $from 0%, $to $stop);
+	
+  /* fallback/image non-cover color */
+  background-color: $from;
+
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+
+// .example {
+//   @include gradient($dark-cyan, $green-blue);
+// }
+
+
+
+// 21. css @include
+@mixin css($property, $values...) {
+    $n: length($values);
+    $i: 1;
+
+    $pxlist: ();
+
+    @while $i <= $n {
+        $itemVal: (nth($values, $i));
+        @if $itemVal != "auto"{
+            $pxlist: append($pxlist, $itemVal);
+        }@else{
+            $pxlist: append($pxlist, auto);
+        }
+
+
+        $i: $i + 1;
+    }
+
+    #{$property}: $pxlist;
+}
+
+// .example {
+//     @include css("margin", 10px);
+// }
+
+
+
+// 22. Centering Elements with position
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+// .example {
+//   @include center(both);
+// }
+
+
+
+// 23. Background-color and text-color
+@mixin theme($theme-color) {
+  .#{$theme-color} {
+    background: $primary-color;
+    * {
+      color: $white-color;
+    }
+  }
+}
+// .example {
+		// @include theme(theme-blue);
+// }
+
+
+// 24. spaceUnit
+@mixin spaceUnit($space-unit) { // edit the space unit on a component level
+  --space-unit:  #{$space-unit};
+  --space-xxxxxs: calc(0.125 * #{$space-unit});
+  --space-xxxxs:  calc(0.25 * #{$space-unit});
+  --space-xxxs:   calc(0.375 * #{$space-unit});
+  --space-xxs:    calc(0.50 * #{$space-unit});
+  --space-xs:    calc(0.75 * #{$space-unit});
+  --space-sm:    calc(1.00 * #{$space-unit});
+  --space-md:    calc(1.50 * #{$space-unit});
+  --space-lg:    calc(2.00 * #{$space-unit});
+  --space-xl:    calc(3.25 * #{$space-unit});
+  --space-xxl:   calc(4.25 * #{$space-unit});
+  --space-xxxl:  calc(6.5 * #{$space-unit});
+	--space-xxxxl: calc(10.75 * #{$space-unit});
+  --space-xxxxxl: calc(13.75 * #{$space-unit});
+}

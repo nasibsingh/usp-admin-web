@@ -1,0 +1,96 @@
+
+
+// ----------------------------------------------
+// TABLE
+// ----------------------------------------------
+ .c-table{
+  .table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 50px;
+    border-spacing: 0 15px;
+  
+    thead {
+    background-color: palette(primary,40);
+    border-radius: $border-radius;
+    color: $default-color;
+    font-weight: $font-bold;
+       tr {
+        font-weight: $font-bold;
+          th {
+             border: 0;
+             font-weight: $font-bold;
+             padding: var(--space-xxxs) var(--space-xxs);
+             vertical-align: middle;
+             position: relative;
+  
+             .sort-icon {
+                position: absolute;
+                top: 48%;
+                right: auto;
+                margin-left: 5px;
+                transition: all 0.2s;
+                cursor: pointer;
+  
+                &--down {
+                   transform: rotate(180deg);
+                }
+             }
+  
+             &:first-child {
+                border-top-left-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
+             }
+  
+             &:last-child {
+                border-top-right-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+             }
+          }
+       }
+    }
+  
+    tbody {
+  
+       tr {
+          border: 1px solid palette(mono, black);
+          border-radius: $border-radius;
+          padding: var(--space-xxxs) var(--space-xxs);
+          color:palette(mono, black);
+  
+          &.no-background {
+             background-color: transparent;
+          }
+  
+          td {
+             border: 1px solid palette(grey, 60);
+             padding: var(--space-xxxs) var(--space-xxs);
+             border-left: 0;
+             border-right: 0;
+             vertical-align: middle;
+             font-weight: $font-regular;
+  
+             &:first-child {
+                border-top-left-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
+                border-left: 1px solid palette(grey, 60);
+             }
+  
+             &:last-child {
+                border-top-right-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+                border-right: 1px solid palette(grey, 60);
+             }
+  
+              &.table-action-buttons {
+                 min-width: 187px;
+                 span {
+                    margin-left: 5px;
+                 }
+              }          
+          }
+       }
+    }
+  }
+}
+  

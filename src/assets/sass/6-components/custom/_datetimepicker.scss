@@ -1,0 +1,122 @@
+// ----------------------------------------------
+// DATE TIME 
+// ----------------------------------------------
+// palette(mono,black)
+.datetime-container {
+    position: relative;
+    padding: 8px;
+    .form-control {
+        cursor: pointer;
+        background-color: palette(mono,white);
+        box-shadow: none;
+        border: 1px solid palette(grey,80);
+      
+    }
+    .datetime-icon {
+        position: absolute;
+        left: 27px;
+        top: 22px;
+        width: 24px;
+    }
+
+    .form-control {
+        cursor: pointer;
+        padding: 16px 0px 16px 61px;
+        color:palette(mono,black);
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+
+    .rdtPicker {
+        width: 100%;
+        padding: 0;
+        box-shadow: $box-shadow-level-2;
+        th {
+            font-weight: $font-regular;
+            padding: 5px;
+            text-align: center;
+            text-align: center;
+            &.rdtSwitch {
+                color: palette(mono, black);
+                font-weight: $font-bold;
+                &.hover{
+                    background-color: palette(mono, white);
+                }
+            }
+
+            &.dow {
+                color: palette(secondary, base);
+            }
+
+            &.rdtNext {
+                color: palette(secondary, base);
+                cursor: pointer;
+                &:hover{
+                    background-color:palette(mono, white) ;
+                }
+            }
+
+            &.rdtPrev {
+                color: palette(secondary, base);
+                cursor: pointer;
+                &:hover{
+                    background-color:palette(mono, white) ;
+                }
+            }
+        }
+
+        td {
+            height: 40px;
+            vertical-align: middle;
+            font-size: $default-size;
+            text-align: center;
+            padding: 10px;
+
+
+            &.rdtDay:hover,
+            &.rdtHour:hover,
+            &.rdtMinute:hover,
+            &.rdtSecond:hover,
+            &.rdtMonth:hover,
+            &.rdtYear:hover,
+
+            &.rdtTimeToggle:hover {
+                background: palette(primary, 60);
+                ;
+                cursor: pointer;
+                border-radius: 6px;
+            }
+
+            &.rdtActive {
+                background: palette(primary, base);
+                color: palette(mono, white);
+                border-radius: 6px;
+
+
+                &:hover {
+                    background:palette(primary, base);
+                }
+            }
+
+
+            &.rdtToday:before {
+                border-bottom-color: palette(primary, base);
+            }
+        }
+    }
+
+    .rdtCounter {
+
+        .rdtCount {
+            height: auto;
+        }
+
+    }
+
+
+}
+
+.width-date{
+    width: 400px;
+}

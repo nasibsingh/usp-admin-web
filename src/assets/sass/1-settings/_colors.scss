@@ -1,0 +1,50 @@
+// ----------------------------------------------
+// Themes Color Style
+// ----------------------------------------------
+
+// palette(mono, black);
+
+
+@function palette($palette, $tone: "base") {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
+
+$palettes: (
+  mono:(
+    white: #FFFFFF,
+    black: #000000,
+  ),
+  primary:(
+    base:#CC0C19,
+    80: #E5858C,
+    60: #F2C2C5,
+    40: #FAE7E8,
+  ),
+  secondary:(
+    base:#5C5C5C,
+    80: #ADADAD,
+    60: #D6D6D6,
+    40: #EFEFEF,
+    20: #EBF2FE,
+  ),
+  grey:(
+    base:#787880,
+    80:#BBBBBF,
+    60: #DDDDDF,
+    40: #F2F2F3,
+    20:#FCFCFC,
+    10: #495057
+
+  )
+  ,alert:(
+    danger:#DC3545,
+    information:#007BFF,
+    success:#28A745,
+    warning:#FFC107,
+    base: #EBF2FE,
+  ),
+  table:(
+    col-bor:#E8E8E8
+  )
+);

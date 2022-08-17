@@ -1,0 +1,150 @@
+$btn-top-pad: 18px;
+$btn-left-pad: 24px;
+
+.c-button {
+  padding: var(--space-xxxs) var(--space-xxs);
+  outline: none;
+  border: none;
+  box-shadow: none;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  font-weight: $font-bold;
+  background-color: $default-color;
+    &:hover {
+      background-color: palette(secondary, base);
+    }
+
+
+    &:active {
+      background-color: $default-color;
+      font-weight: $font-bold;
+     
+    }
+
+    &.disabled {
+      background-color: palette(grey, 80);
+      color: palette(mono, white);
+      border: 1px solid palette(grey, 80);
+    }
+    .spinner-border-sm {
+      width: 24px;
+      height: 24px;
+      border-width: 0.2em;
+  }
+  &--outline {
+    background-color: transparent;
+    color: $default-color;
+    border: 1px solid $default-color;
+
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid palette(secondary, base);
+      color: palette(secondary, base);
+    }
+
+    &:active {
+      background-color: transparent;
+      color: $default-color;
+      border: 1px solid $default-color;
+      font-weight: $font-bold;
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: $default-color;
+      border: 1px solid $default-color;
+      font-weight: $font-bold;
+    }
+
+    &.disabled {
+      background-color: transparent;
+      color: palette(grey, 80);
+      border: 1px solid palette(grey, 80);
+    }
+
+    &.loading {
+      background-color: transparent;
+      color: palette(grey, 80);
+      border: 1px solid palette(grey, 80);
+    }
+  }
+
+  &--with-icon {
+    background-color: transparent;
+    color: palette(mono, black);
+    border: 1px solid palette(mono, black);
+
+    img {
+      width: 26px;
+      margin-right: 7px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: palette(mono, black);
+      border: 1px solid palette(mono, black);
+    }
+
+    &:active {
+      background-color: transparent;
+      color: palette(mono, black);
+      border: 1px solid palette(mono, black);
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: palette(mono, black);
+      border: 1px solid palette(mono, black);
+    }
+
+  }
+  &.full-width{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn.disabled,
+.btn:disabled {
+  opacity: 1;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: none;
+}
+
+// remove dotted outline/border in Firefox
+button:focus,
+a:focus,
+a:active,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"]>input[type="button"]::-moz-focus-inner {
+  outline: none !important;
+  box-shadow: none;
+}
