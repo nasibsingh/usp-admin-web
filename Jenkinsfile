@@ -17,7 +17,7 @@ pipeline {
         }
         stage ('zip stage') {
             steps {
-                sh 'zip dist.zip dist'
+                sh 'zip dist$BUILD_NUMBER.zip dist'
             }
         }
         stage ('Upload') {
